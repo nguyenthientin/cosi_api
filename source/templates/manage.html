@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="refresh" content="5">
+<body>
+
+<h1>Running jobs</h1>
+Number of running jobs: {{jobs|length}}
+<ul>
+    {% for id, description in jobs %}
+    <li> {{description}} &emsp; &emsp; <a href="log?id={{id}}">log</a> &emsp; &emsp; <a href="terminate?id={{id}}">terminate</a> </li>
+    {% endfor %}
+</ul>
+<h1>Running services</h1>
+Number of running services: {{services|length}}
+<ul>
+    {% for name, count in services.items() %}
+    <li> {{name}} ({{count}} jobs) <a href="terminate?id={{name}}">terminate all</a> </li>
+    {% endfor %}
+</ul>
+<h1>Recent jobs</h1>
+Number of recent jobs: {{recent|length}}
+<ul>
+    {% for id, description in recent %}
+    <li> {{description}} &emsp; &emsp; <a href="log?id={{id}}">log</a> </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
+
+

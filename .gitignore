@@ -1,0 +1,9 @@
+test/
+test*
+.py*
+*pycache*
+data/
+.vscode/
+*credential*
+*.pkl
+
